@@ -51,7 +51,7 @@ const HomePacientes = () => {
         if (citaNueva.motivo !== "") {
             const fetch = async () => {
                 try {
-                    const response = await fetchData('GET', `crud_medicos.php?especialidad_id=${citaNueva.motivo}`);
+                    const response = await fetchData('GET', `medicos?especialidad_id=${citaNueva.motivo}`);
                     setMedicos(response.data);
                     console.log(response.data);
                     
@@ -73,7 +73,7 @@ const HomePacientes = () => {
         // console.log(citaNueva);
         const send = async () => {
             try {
-                const response = await fetchData('POST', 'crud_citas.php', {...citaNueva, paciente_id:1});
+                const response = await fetchData('POST', 'citas', {...citaNueva, paciente_id:1});
                 console.log(response);
             } catch (error) {
                 console.error("Error sending data:", error);

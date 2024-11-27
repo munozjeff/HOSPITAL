@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Methods", "POST");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         response.setHeader("Access-Control-Allow-Credentials", "true");
+        
 
         // Leer el cuerpo de la solicitud
         StringBuilder sb = new StringBuilder();
@@ -109,12 +110,14 @@ emailCookie.setDomain("localhost");
 rolCookie.setDomain("localhost");
 idCookie.setDomain("localhost");
 
+
 emailCookie.setPath("/");
 rolCookie.setPath("/");
 idCookie.setPath("/");
 
 // Hacer que las cookies estén disponibles en todo el sitio
 response.addCookie(emailCookie);
+response.setHeader("Set-Cookie", "email=ddd; SameSite=None; Secure; HttpOnly; Path=/; Max-Age=3600; Domain=localhost");
 response.addCookie(rolCookie);
 response.addCookie(idCookie);
 

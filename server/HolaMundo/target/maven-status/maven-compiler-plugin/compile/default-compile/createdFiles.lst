@@ -1,4 +1,6 @@
+com\mycompany\holamundo\CitasServlet.class
 com\mycompany\holamundo\LoginServlet.class
+com\mycompany\holamundo\MedicosServlet.class
 com\mycompany\holamundo\JakartaRestConfiguration.class
 com\mycompany\holamundo\CORSFilter.class
 com\mycompany\holamundo\GetEspecialidadesServlet.class

@@ -11,7 +11,7 @@ export const LoginForm = () => {
   useEffect(()=>{
     const fetch = async () => {
       try {
-        const response = await fetchData('GET', 'verificarCookies');
+        const response = await fetchData('GET', 'verificarCookies', {credentials: "include"});
         console.log(response);
         if (response.success) {
             navigate('/paciente', { state: { data: response.data } });
@@ -33,7 +33,7 @@ export const LoginForm = () => {
     }
     const fetch = async () => {
       try {
-        const response = await fetchData('POST', 'login', data);
+        const response = await fetchData('POST', 'login', data , {credentials: "include"}); // Esto asegura que las cookies se envíen/reciban;
         console.log(response)
         if (response.success) {
           if (response.data.rol === 'paciente') {
