@@ -1,0 +1,81 @@
+.historial-citas-container {
+    display: flex;
+    /* padding: 20px; */
+    background-color: #f7f7f7;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sidebar-futuras {
+    width: 30%;
+    padding: 20px;
+    background-color: #e6e6e6;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.historial-citas {
+    width: 70%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    overflow: scroll;
+}
+
+li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+.sidebar-futuras-controles{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar-futuras-controles>input{
+    width: 32px;
+    height: 32px;
+    border: none;
+}
+.editar{
+    background-image: url("../../assets/edit.png");
+    background-position: center;
+    background-size: cover;
+}
+.eliminar{
+    background-image: url("../../assets/delete.png");
+    background-position: center;
+    background-size: cover;
+}

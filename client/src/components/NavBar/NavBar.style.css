@@ -1,0 +1,15 @@
+.logout-container{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: end;
+}
+.logout-container img{
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+}
+.logout-container span:first-of-type{
+    margin-right: 20px;
+}

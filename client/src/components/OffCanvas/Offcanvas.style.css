@@ -1,0 +1,17 @@
+.burger-menu{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    left: 10px;
+    background-image: url('../../assets/more.png');
+    background-position: center;
+    background-size: cover;
+    border: none;
+}
+
+.offcanvas {
+    width: 250px !important; /* Ajusta el ancho del Offcanvas dentro del componente */
+    height: 100% !important; /* Se ajustará a la altura completa de su contenedor */
+    position: absolute; /* Absoluto para situarlo dentro del contenedor */
+}

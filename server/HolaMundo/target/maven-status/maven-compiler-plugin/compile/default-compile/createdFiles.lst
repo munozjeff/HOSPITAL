@@ -1,0 +1,9 @@
+com\mycompany\holamundo\LoginServlet.class
+com\mycompany\holamundo\JakartaRestConfiguration.class
+com\mycompany\holamundo\CORSFilter.class
+com\mycompany\holamundo\GetEspecialidadesServlet.class
+com\mycompany\holamundo\VerificarCookiesServlet.class
+com\mycompany\holamundo\ApiServlet.class
+com\mycompany\holamundo\DatabaseConfig.class
+com\mycompany\holamundo\GetPatientServlet.class
+com\mycompany\holamundo\resources\JakartaEE8Resource.class
