@@ -15,7 +15,7 @@ const useApi = (baseUrl) => {
 
       if (method === 'POST') {
         response = await axios.post(fullUrl, body, {
-          headers: { 'Content-Type': 'application/json' },credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },credentials: true,
         });
       } else if (method === 'GET') {
         response = await axios.get(fullUrl, {

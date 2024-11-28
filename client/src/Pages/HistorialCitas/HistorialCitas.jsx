@@ -4,7 +4,7 @@ import useApi from '../../customHooks/useApi';
 import Modal from '../../components/Modal/Modal';
 
 const HistorialCitas = () => {
-    const { loading, error, fetchData } = useApi("http://localhost/HOSPITAL/");
+    const { loading, error, fetchData } = useApi("http://localhost:8080/HolaMundo/");
     const [historial, setHistorial] = useState([]);
     const [citasFuturas, setCitasFuturas] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,7 +19,7 @@ const HistorialCitas = () => {
         if (isModalOpen){
             const fetch = async () => {
                 try {
-                    const response = await fetchData('GET', 'get_especialidades.php');
+                    const response = await fetchData('GET', 'get_especialidades');
                     setEspecialidades(response.data);
                 } catch (error) {
                     console.error("Error fetching data:", error);
@@ -45,7 +45,7 @@ const HistorialCitas = () => {
             try {
                 console.log(editID);
                 
-                const response = await fetchData('PUT',`crud_citas.php?id=${editID}`, citaNuevaMod);
+                const response = await fetchData('PUT',`citas?id=${editID}`, citaNuevaMod);
                 console.log(response);
             } catch (error) {
                 console.error("Error sending data:", error);
@@ -59,8 +59,8 @@ const HistorialCitas = () => {
         const fetchCitas = async () => {
             try {
                 const [response1, response2] = await Promise.all([
-                    fetchData('GET', 'get_historial_citas.php?id=1'),
-                    fetchData('GET', 'get_citas_futuras.php?id=1'),
+                    fetchData('GET', 'get_historial_citas?id=1'),
+                    fetchData('GET', 'get_citas_futuras?id=1'),
                 ])
                 setHistorial(response1.data);
                 setCitasFuturas(response2.data);
@@ -75,7 +75,7 @@ const HistorialCitas = () => {
         if (citaNueva.motivo !== "") {
             const fetch = async () => {
                 try {
-                    const response = await fetchData('GET', `crud_medicos.php?especialidad_id=${citaNueva.motivo}`);
+                    const response = await fetchData('GET', `medicos?especialidad_id=${citaNueva.motivo}`);
                     setMedicos(response.data);
                     console.log(response.data);
                     
@@ -96,8 +96,8 @@ const HistorialCitas = () => {
         const citaId = e.target.closest('li').dataset.id
         const fetch = async () => {
             const [response1,response2] = await Promise.all([
-                fetchData('DELETE', `crud_citas.php?id=${citaId}`),
-                fetchData('GET', 'get_citas_futuras.php?id=1'),
+                fetchData('DELETE', `citas?id=${citaId}`),
+                fetchData('GET', 'get_citas_futuras?id=1'),
             ])
             setCitasFuturas(response2.data);
             console.log(response1);

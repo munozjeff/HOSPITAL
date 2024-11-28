@@ -74,7 +74,13 @@ const HomePacientes = () => {
         const send = async () => {
             try {
                 const response = await fetchData('POST', 'citas', {...citaNueva, paciente_id:1});
-                console.log(response);
+                if (response?.success == true) {
+                    alert("Cita creada exitosamente");
+                    // setCitaNueva({paciente_id:"",medico_id:"",fecha_hora:"",motivo:"",estado:"pendiente"})
+                }
+                else{
+                    alert("Error al crear Cita");
+                }
             } catch (error) {
                 console.error("Error sending data:", error);
             }
